@@ -1,10 +1,13 @@
 {
+    "name": "sensio-training/sensio-tv",
+    "description": "Netflix by Sensio",
     "type": "project",
     "license": "proprietary",
     "require": {
         "php": "^7.2.5",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "sensio/framework-extra-bundle": "^5.5",
         "symfony/console": "5.1.*",
         "symfony/dotenv": "5.1.*",
         "symfony/flex": "^1.3.1",
@@ -12,6 +15,7 @@
         "symfony/yaml": "5.1.*"
     },
     "require-dev": {
+        "symfony/maker-bundle": "^1.19"
     },
     "config": {
         "optimize-autoloader": true,
