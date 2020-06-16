@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Movie;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -20,14 +21,12 @@ class MovieController extends AbstractController
     }
 
     /**
-     * @Route("/details", name="app_movie_show_details", methods={"GET"})
+     * @Route("/details/{id}", name="app_movie_show_details", methods={"GET"})
      */
-    public function showDetails(): Response
+    public function showDetails(Movie $movie): Response
     {
         return $this->render('movie/show_details.html.twig', [
-            'movie' => [
-                'title' => 'Avengers: Endgame (2019)',
-            ]
+            'movie' => $movie,
         ]);
     }
 
