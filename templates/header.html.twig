@@ -1,0 +1,49 @@
+<header>
+    <nav class="navbar navbar-dark navbar-expand-md fixed-top bg-dark justify-content-center">
+        <a class="navbar-brand mr-0" href="/index.html"><img src="/assets/images/sensiotv-icon.png" alt="SensioTV Brand Icon"> <span class="color-green">TV+</span></a>
+        <button class="navbar-toggler ml-5" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="collapsingNavbar">
+            <ul class="navbar-nav mx-auto text-center">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ path('app_main_index') }}" title="Back to the homepage">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_movie_top_rated') }}" title="Get all top rated movies">Top Rated</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_movie_list_by_genre') }}" title="Find your movie by genre">Browse By Genre</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_movie_list_by_genre', {'genre': 'x'}) }}" title="Get all new movies">Latest</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_main_contact') }}" title="You need some help ? Contact us !">Help Center</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav text-center">
+                <li class="nav-item active"><a class="nav-link" href="{{ path('app_user_cart') }}" title="Register or log in"><i class="fas fa-shopping-bag"></i></a></li>
+                <li class="nav-item active"><a class="nav-link" href="{{ path('app_main_login') }}" title="Register or log in"><i class="fas fa-user"></i></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    {% dump %}
+
+    {% if show_video_header %}
+        <section id="video-header" class="video-background-holder">
+            <div class="video-background-overlay"></div>
+            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop"><source src="/assets/video/home-trailer.mp4" type="video/mp4"></video>
+            <div class="video-background-content text-white text-center h-100">
+                <div class="d-flex align-items-center h-100">
+                    <div class="w-100">
+                        <h1 class="display-3 font-weight-bold m-0">Sensio<span class="color-green">TV+</span></h1>
+                        <p class="lead"><strong class="font-weight-bold">We will make you love TV again. A new way of ordering, downloading and watching television !</strong></p>
+                        <p><a href="#first-section" title="Click here to get more information">Learn more <i class="far fa-arrow-alt-circle-right"></i></a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endif %}
+</header>

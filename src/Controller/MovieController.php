@@ -2,13 +2,14 @@
 
 namespace App\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * @Route("/movie")
  */
-class MovieController
+class MovieController extends AbstractController
 {
     /**
      * @Route("/by-genre/{genre}", name="app_movie_list_by_genre", methods={"GET"})
@@ -23,7 +24,11 @@ class MovieController
      */
     public function showDetails(): Response
     {
-        return new Response(file_get_contents(__DIR__.'/../../html/movie-details.html'));
+        return $this->render('movie/show_details.html.twig', [
+            'movie' => [
+                'title' => 'Avengers: Endgame (2019)',
+            ]
+        ]);
     }
 
     /**
