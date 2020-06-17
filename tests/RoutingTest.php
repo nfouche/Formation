@@ -13,6 +13,10 @@ class RoutingTest extends WebTestCase
      */
     public function testIndex(string $url, int $statusCode, string $title)
     {
+        if ('/movie/details' === $url) {
+            $this->markTestIncomplete('Create a movie fixture');
+        }
+
         $client = static::createClient();
 
         $client->request(Request::METHOD_GET, $url);

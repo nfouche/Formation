@@ -9,7 +9,7 @@
 
 require('bootstrap');
 require('fontawesome');
-require('../css/sensiotv-theme.scss')
+require('../css/sensiotv-theme.scss');
 
 $('#collapsingLeftSideBar').click(function() {
     let leftSideBar = $('#sidebar');

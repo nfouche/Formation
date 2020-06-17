@@ -23,8 +23,10 @@ class MovieController extends AbstractController
     /**
      * @Route("/details/{id}", name="app_movie_show_details", methods={"GET"})
      */
-    public function showDetails(Movie $movie): Response
+    public function showDetails(): Response
     {
+        // todo $movie = $api->requestByTitle();
+
         return $this->render('movie/show_details.html.twig', [
             'movie' => $movie,
         ]);
